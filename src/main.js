@@ -14,12 +14,12 @@ import '@quasar/extras/material-symbols-rounded/material-symbols-rounded.css';
 import '@quasar/extras/material-symbols-sharp/material-symbols-sharp.css';
 
 const app = createApp(App);
+
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
-// Usar plugins y montajes
-app.use(router);
 app.use(pinia);
+app.use(router);
 app.use(Quasar, {
   plugins: {
     Notify,

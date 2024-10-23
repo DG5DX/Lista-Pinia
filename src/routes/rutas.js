@@ -1,5 +1,5 @@
-import Lista from "../components/Lista.vue";
-import Agregar from "../components/Agregar.vue";
+import Lista from "../components/Lista.vue"
+import Agregar from "../components/Agregar.vue"
 import Editar from "../components/Editar.vue";
 import { createRouter, createWebHashHistory } from "vue-router";
 
