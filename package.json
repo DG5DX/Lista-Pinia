@@ -1,5 +1,5 @@
 {
-  "name": "lista-pinia",
+  "name": "actividad-pinia",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,18 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@material-icons/font": "^1.0.36",
+    "@mui/icons-material": "^6.1.5",
+    "@mui/material": "^6.1.5",
     "@quasar/extras": "^1.16.12",
     "axios": "^1.7.7",
     "pinia": "^2.2.4",
-    "pinia-plugin-persistedstate": "^4.1.1",
     "quasar": "^2.17.1",
-    "vue": "^3.5.10",
+    "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.8.0",
     "@vitejs/plugin-vue": "^5.1.4",
-    "sass": "^1.80.3",
-    "vite": "^5.4.8"
+    "sass-embedded": "^1.80.4",
+    "vite": "^5.4.9"
   }
 }
