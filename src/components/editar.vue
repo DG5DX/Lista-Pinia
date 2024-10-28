@@ -42,7 +42,7 @@
       router.push('/');
     }, 500);
   }
-  </script>
+  </script>  
   
   <style scoped>
   h2 {

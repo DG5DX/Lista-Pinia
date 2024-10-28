@@ -6,6 +6,7 @@ export const useAdminStore = defineStore('admin', () => {
   const selectedActivity = ref(null);
 
   function addActivity(activity) {
+    activity.id = activity.id || Date.now();
     activities.value.push(activity);
   }
 

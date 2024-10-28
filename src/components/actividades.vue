@@ -43,8 +43,8 @@ const columns = [
 ];
 
 function editActivity(activity) {
-  store.setSelectedActivity(activity);
-  router.push('/editar');
+  store.setSelectedActivity(activity); // Store the selected activity
+  router.push('/editar'); // Navigate to the editing component
 }
 
 function deleteActivity(activityId) {
