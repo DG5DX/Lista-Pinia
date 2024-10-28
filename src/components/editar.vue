@@ -6,28 +6,9 @@
         </q-card-section>
   
         <q-form @submit="onSubmit" class="form-container">
-          <q-input
-            filled
-            v-model="activity.description"
-            label="Descripción"
-            lazy-rules
-            class="input-field"
-          />
-          <q-input
-            filled
-            v-model="activity.date"
-            label="Fecha"
-            type="date"
-            lazy-rules
-            class="input-field"
-          />
-          <q-select
-            filled
-            v-model="activity.status"
-            :options="statusOptions"
-            label="Estado"
-            class="input-field"
-          />
+          <q-input filled v-model="activity.description" label="Descripción" lazy-rules class="input-field" />
+          <q-input filled v-model="activity.date" label="Fecha" type="date" lazy-rules class="input-field" />
+          <q-select filled v-model="activity.status" :options="statusOptions" label="Estado" class="input-field" />
           <div class="button-container">
             <q-btn label="Guardar Cambios" color="primary" type="submit" />
           </div>
@@ -94,4 +75,3 @@
     background-color: #0056b3;
   }
   </style>
-  

@@ -6,28 +6,9 @@
         </q-card-section>
   
         <q-form @submit="onSubmit" class="form-container">
-          <q-input
-            filled
-            v-model="activityData.description"
-            label="Descripción"
-            lazy-rules
-            class="input-field"
-          />
-          <q-input
-            filled
-            v-model="activityData.date"
-            label="Fecha"
-            type="date"
-            lazy-rules
-            class="input-field"
-          />
-          <q-select
-            filled
-            v-model="activityData.status"
-            :options="statusOptions"
-            label="Estado"
-            class="input-field"
-          />
+          <q-input filled v-model="activityData.description" label="Descripción" lazy-rules class="input-field" />
+          <q-input filled v-model="activityData.date" label="Fecha" type="date" lazy-rules class="input-field" />
+          <q-select filled v-model="activityData.status" :options="statusOptions" label="Estado" class="input-field" />
           <div class="button-container">
             <q-btn label="Agregar" color="primary" type="submit" />
           </div>
@@ -36,31 +17,24 @@
     </q-page>
   </template>
   
-  <script>
+  <script setup>
   import { ref } from 'vue';
   import { useAdminStore } from '../stores/admin.js';
   import { Notify } from 'quasar';
   
-  export default {
-    name: 'Agregar',
-    setup() {
-      const adminStore = useAdminStore();
-      const activityData = ref({ description: '', date: '', status: '' });
-      const statusOptions = ['Completado', 'Pendiente'];
+  const adminStore = useAdminStore();
+  const activityData = ref({ description: '', date: '', status: '' });
+  const statusOptions = ['Completado', 'Pendiente'];
   
-      function onSubmit() {
-        if (activityData.value.description && activityData.value.date && activityData.value.status) {
-          adminStore.addActivity({ ...activityData.value });
-          activityData.value = { description: '', date: '', status: '' };
-          Notify.create({ message: 'Actividad agregada exitosamente', color: 'green' });
-        } else {
-          Notify.create({ message: 'Por favor completa todos los campos', color: 'red' });
-        }
-      }
-  
-      return { activityData, statusOptions, onSubmit };
+  function onSubmit() {
+    if (activityData.value.description && activityData.value.date && activityData.value.status) {
+      adminStore.addActivity({ ...activityData.value });
+      activityData.value = { description: '', date: '', status: '' };
+      Notify.create({ message: 'Actividad agregada exitosamente', color: 'green' });
+    } else {
+      Notify.create({ message: 'Por favor completa todos los campos', color: 'red' });
     }
-  };
+  }
   </script>
   
   <style scoped>

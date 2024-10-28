@@ -39,10 +39,12 @@ function navigateTo(tab) {
 .q-tabs {
   border-bottom: 2px solid #ccc;
 }
-.q-layout{
-background-color: rgb(45, 101, 255);
+
+.q-layout {
+  background-color: rgb(45, 101, 255);
 }
-.q-toolbar{
+
+.q-toolbar {
   display: grid;
   justify-items: center;
 }

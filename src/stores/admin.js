@@ -1,4 +1,3 @@
-// stores/admin.js
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
@@ -17,9 +16,20 @@ export const useAdminStore = defineStore('admin', () => {
     }
   }
 
+  function deleteActivity(activityId) {
+    activities.value = activities.value.filter(activity => activity.id !== activityId);
+  }
+
   function setSelectedActivity(activity) {
     selectedActivity.value = activity;
   }
 
-  return { activities, selectedActivity, addActivity, updateActivity, setSelectedActivity };
+  return { 
+    activities, 
+    selectedActivity, 
+    addActivity, 
+    updateActivity, 
+    deleteActivity,
+    setSelectedActivity 
+  };
 });
